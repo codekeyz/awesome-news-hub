@@ -1,7 +1,7 @@
     
 from setuptools import setup
 
-setup(name='joyscraper',
+setup(name='gharage-client',
       version='1.0.0',
       description='Module for getting news from the Gharage News Ghana Website',
       author='Precious Keyz',
