@@ -38,8 +38,14 @@ print(news)
 ]
 ```
 
+### HTTP Calls
+
+If you prefer to use the REST-API, make your request to https://gharage-news.herokuapp.com/
+
+Example: Get News on Page 4 with this URL
 ```
-If you prefer to use HTTP Calls, make your request to https://gharage-news.herokuapp.com/
+https://gharage-news.herokuapp.com?page=4
 ```
+
 
 Feel free to use and submit PR's to improve usage. 
