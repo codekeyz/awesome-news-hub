@@ -42,7 +42,7 @@ class GharageNewsClient(object):
                     data['post_image'] = article.find('img')['src']
 
                     data['post_time'] = article.find(
-                        'time', 
+                        'time',
                         {
                             'class': lambda x: x and set(['entry-date', 'published']).issubset(x.split())
                         }).text

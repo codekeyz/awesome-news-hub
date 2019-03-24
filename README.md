@@ -9,7 +9,8 @@ from gharage import GharageNewsClient
 
 client = GharageNewsClient()
 
-news = client.get_news()
+# Getting news on page 5 of the website
+news = client.get_news(page=5)
 
 print(news)
 
@@ -35,6 +36,10 @@ print(news)
     "post_detail": "Sturta, a local marketplace for service providers across Africa, has launched with more than 1000 vetted professionals in Accra, Ghana."
   }
 ]
+```
+
+```
+If you prefer to use HTTP Calls, make your request to https://gharage-news.herokuapp.com/
 ```
 
 Feel free to use and submit PR's to improve usage. 
