@@ -9,7 +9,8 @@ from gharage import GharageNewsClient
 
 client = GharageNewsClient()
 
-news = client.get_news()
+# Getting news on page 5 of the website
+news = client.get_news(page=5)
 
 print(news)
 
