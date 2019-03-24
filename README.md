@@ -37,4 +37,8 @@ print(news)
 ]
 ```
 
+```
+If you prefer to use HTTP Calls, make your request to https://gharage-news.herokuapp.com/
+```
+
 Feel free to use and submit PR's to improve usage. 
