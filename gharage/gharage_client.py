@@ -26,32 +26,35 @@ class GharageNewsClient(object):
 
                 result = []
 
-                # Looping through found articles and getting data out of the html elements
                 for article in articles:
-                    data = {}
-
-                    data['title'] = article.find(
-                        'h2', class_='entry-title').a.text
-
-                    data['author'] = article.find(
-                        'span', class_="author vcard").a.text
-
-                    data['author_url'] = article.find(
-                        'span', class_="author vcard").a['href']
-
-                    data['post_image'] = article.find('img')['src']
-
-                    data['post_time'] = article.find(
-                        'time',
-                        {
-                            'class': lambda x: x and set(['entry-date', 'published']).issubset(x.split())
-                        }).text
-
-                    data['post_detail'] = str(article.find(
-                        'div', class_="entry-excerpt").text).strip()
-
+                    data = self.parse_article(article)
                     result.append(data)
 
                 return json.dumps(result)
         except RequestException as cause:
             print(cause)
+
+    def parse_article(self, article):
+        data = {}
+
+        data['title'] = article.find(
+            'h2', class_='entry-title').a.text
+
+        data['author'] = article.find(
+            'span', class_="author vcard").a.text
+
+        data['author_url'] = article.find(
+            'span', class_="author vcard").a['href']
+
+        data['post_image'] = article.find('img')['src']
+
+        data['post_time'] = article.find(
+            'time',
+            {
+                'class': lambda x: x and set(['entry-date', 'published']).issubset(x.split())
+            }).text
+
+        data['post_detail'] = str(article.find(
+            'div', class_="entry-excerpt").text).strip()
+
+        return data
